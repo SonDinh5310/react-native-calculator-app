@@ -10,7 +10,6 @@ export default function App() {
     const operations = ["%", "*", "/", "+", "-"];
 
     const handleNumbersPress = (value) => {
-        console.log(value);
         if (calculate == 0) {
             setCalculate(value);
             return;
@@ -27,10 +26,6 @@ export default function App() {
             setCalculate(
                 calculate.toString().substring(0, calculate.length - 1)
             );
-            return;
-        }
-        if (value === "+/-") {
-            setCalculate(calculate * -1);
             return;
         }
         if (operations.includes(calculate.toString().split("").pop())) {
@@ -76,9 +71,9 @@ export default function App() {
                             onPress={() => handleOperationsPress("%")}
                         ></Button>
                         <Button
-                            value="+/-"
-                            theme="secondary"
-                            onPress={() => handleOperationsPress("+/-")}
+                            value="*"
+                            theme="accent"
+                            onPress={() => handleOperationsPress("*")}
                         ></Button>
                     </Row>
                     <Row>
@@ -95,9 +90,9 @@ export default function App() {
                             onPress={() => handleNumbersPress(3)}
                         ></Button>
                         <Button
-                            value="*"
+                            value="/"
                             theme="accent"
-                            onPress={() => handleOperationsPress("*")}
+                            onPress={() => handleOperationsPress("/")}
                         ></Button>
                     </Row>
                     <Row>
@@ -114,9 +109,9 @@ export default function App() {
                             onPress={() => handleNumbersPress(6)}
                         ></Button>
                         <Button
-                            value="/"
+                            value="+"
                             theme="accent"
-                            onPress={() => handleOperationsPress("/")}
+                            onPress={() => handleOperationsPress("+")}
                         ></Button>
                     </Row>
                     <Row>
@@ -133,14 +128,15 @@ export default function App() {
                             onPress={() => handleNumbersPress(9)}
                         ></Button>
                         <Button
-                            value="+"
+                            value="-"
                             theme="accent"
-                            onPress={() => handleOperationsPress("+")}
+                            onPress={() => handleOperationsPress("-")}
                         ></Button>
                     </Row>
                     <Row>
                         <Button
                             value="0"
+                            size="double"
                             onPress={() => handleNumbersPress(0)}
                         ></Button>
                         <Button
@@ -149,12 +145,8 @@ export default function App() {
                         ></Button>
                         <Button
                             value="="
-                            onPress={() => handleCalculation()}
-                        ></Button>
-                        <Button
-                            value="-"
                             theme="accent"
-                            onPress={() => handleOperationsPress("-")}
+                            onPress={() => handleCalculation()}
                         ></Button>
                     </Row>
                 </View>

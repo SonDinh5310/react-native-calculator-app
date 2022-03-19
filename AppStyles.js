@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+
+const screenWidth = Dimensions.get("window").width;
 
 const styles = StyleSheet.create({
     container: {
@@ -14,7 +16,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     resultText: {
-        fontSize: 60,
+        fontSize: screenWidth * 0.15,
         fontWeight: "bold",
         color: "white",
     },
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     calculationText: {
-        fontSize: 50,
+        fontSize: screenWidth * 0.13,
         fontWeight: "bold",
         color: "white",
     },
